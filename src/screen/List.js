@@ -5,6 +5,7 @@ import {
   Button,
   Image,
   Modal,
+  Platform,
   ScrollView,
   StyleSheet,
   Text,
@@ -27,6 +28,10 @@ const List = () => {
       .then(data => setItem(data))
       .catch(error => console.log(error));
   }, []);
+  // Alert.alert('hhhh');
+  // if (item) {
+  //   Alert.alert('hh');
+  // }
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
@@ -213,7 +218,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     display: 'flex',
-    marginTop: 20,
+    marginTop: Platform.OS === 'ios' ? 50 : 10,
     backgroundColor: 'lightGray',
     flexDirection: 'column',
     // alignItems: 'center',

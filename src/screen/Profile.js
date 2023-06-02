@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, Platform} from 'react-native';
 // import {AntDesign} from 'react-native-vector-icons/AntDesign';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
@@ -77,7 +77,7 @@ const Profile = ({navigation, route}) => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    marginTop: 50,
+    marginTop: Platform.OS === 'ios' ? 50 : 10,
     flex: 1,
   },
   container: {

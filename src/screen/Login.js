@@ -7,6 +7,8 @@ import {
   StyleSheet,
   Image,
   Alert,
+  TouchableOpacity,
+  Platform,
 } from 'react-native';
 import notifee, {EventType} from '@notifee/react-native';
 
@@ -106,18 +108,18 @@ const Login = ({navigation}) => {
         onChangeText={text => setPassword(text)}
         value={password}
       />
-      <Button
-        // style={styles.btn}
-        title="Login"
-        onPress={() => onDisplayNotification()}
-      />
+      <TouchableOpacity
+        style={styles.btn}
+        onPress={() => onDisplayNotification()}>
+        <Text style={{color: 'white', fontWeight: 600}}>Log In</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 40,
+    marginTop: Platform.OS === 'ios' ? 50 : 10,
     backgroundColor: 'white',
     flex: 1,
     // justifyContent: 'center',
@@ -148,13 +150,17 @@ const styles = StyleSheet.create({
   },
   btn: {
     height: 54,
-    width: 350,
+    width: '90%',
     gap: 8,
     borderWidth: 1,
     borderColor: '#4997E9',
     borderRadius: 14,
     backgroundColor: '#4997E9',
     color: 'white',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
   },
 });
 

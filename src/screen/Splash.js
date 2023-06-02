@@ -4,16 +4,16 @@ import {View, Text, Image, Alert, TouchableOpacity} from 'react-native';
 // import { Text } from 'react-native-paper';
 
 const Splash = ({navigation}) => {
-  //   setTimeout(() => {
-  //     navigation.navigate('Login');
-  //   }, 3000);
-
-  const handleScreen = () => {
+  setTimeout(() => {
     navigation.navigate('Login');
-  };
+  }, 2000);
+
+  // const handleScreen = () => {
+  //   navigation.navigate('Login');
+  // };
   return (
     <TouchableOpacity
-      onPress={handleScreen}
+      // onPress={handleScreen}
       style={{
         // marginTop:50,
         flex: 1,

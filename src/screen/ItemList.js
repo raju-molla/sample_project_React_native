@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -37,7 +37,7 @@ const ItemList = () => {
 };
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50,
+    marginTop: Platform.OS === 'ios' ? 50 : 10,
   },
 });
 

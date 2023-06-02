@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Platform} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {blue100} from 'react-native-paper/lib/typescript/src/styles/themes/v2/colors';
@@ -33,7 +33,7 @@ const Notification = ({navigation, route}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 50,
+    marginTop: Platform.OS === 'ios' ? 50 : 10,
   },
   header: {
     height: '10%',
